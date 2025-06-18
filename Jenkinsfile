@@ -85,7 +85,7 @@ pipeline {
        sh '''
           sed -i "s/image:.*/image: smoon100h\\/restaurant-listing-service:${VERSION}/" aws/restaurant-manifest.yml
         '''
-          sh 'git checkout main'
+          sh 'git checkout -B main origin/main'
           sh 'git add .'
           sh 'git commit -m "Update image tag"'
         sshagent(['git-ssh'])
